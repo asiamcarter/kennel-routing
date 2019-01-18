@@ -12,8 +12,8 @@ export default class ApplicationViews extends Component {
         locations: []
     }
 
-    deleteAnimal = id => {
-        return fetch(`http://localhost:5002/animals/${id}`, {
+    deleteAnimal = (location,id) => {
+        return fetch(`http://localhost:5002/${location}/${id}`, {
             method: "DELETE"
         })
         .then(e => e.json())
