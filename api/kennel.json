@@ -1,0 +1,60 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "name": "Jordan Nelson"
+    },
+    {
+      "id": 3,
+      "name": "Zoe LeBlanc"
+    },
+    {
+      "id": 4,
+      "name": "Blaise Roberts"
+    }
+  ],
+  "animals": [
+    {
+      "id": 3,
+      "name": "Angus"
+    },
+    {
+      "id": 4,
+      "name": "Henley"
+    },
+    {
+      "id": 5,
+      "name": "Derkins"
+    },
+    {
+      "id": 6,
+      "name": "Checkers"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ],
+  "owners": [
+    {
+      "id": 2,
+      "name": "Jamie Spears"
+    },
+    {
+      "id": 3,
+      "name": "Judd Apatow"
+    },
+    {
+      "id": 4,
+      "name": "Robin Williams"
+    }
+  ]
+}
