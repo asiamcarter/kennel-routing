@@ -3,13 +3,15 @@ import React, { Component } from "react"
 import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
+import OwnerList from "./owner/OwnerList"
 
 
 export default class ApplicationViews extends Component {
     state = {
         animals: [],
         employees: [],
-        locations: []
+        locations: [],
+        owners: []
     }
 
     deleteAnimal = (location,id) => {
@@ -37,6 +39,19 @@ export default class ApplicationViews extends Component {
         }))
     }
 
+    deleteOwner = (location, id) => {
+        return fetch(`http://localhost:5002/${location}/${id}`, {
+            method: "DELETE"
+        })
+        .then(e=>e.json())
+        .then(()=> fetch('http://localhost:5002/owners'))
+        .then(e=> e.json())
+        .then(owners => this.setState ({
+            owners: owners
+        }))
+    }
+
+
     componentDidMount() {
         const newState = {}
 
@@ -49,7 +64,11 @@ export default class ApplicationViews extends Component {
             .then(() => fetch("http://localhost:5002/locations")
             .then(r => r.json()))
             .then(locationsArray => newState.locations = locationsArray)
+            .then(() => fetch("http://localhost:5002/owners"))
+            .then(r => r.json())
+            .then(ownersArray => newState.owners = ownersArray)
             .then(()=> this.setState(newState))
+
     }
 
     render() {
@@ -66,6 +85,11 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees}
                     deleteEmployee={this.deleteEmployee} />
+                }} />
+
+                <Route exact path="/owners" render={(props) => {
+                    return <OwnerList owners={this.state.owners}
+                    deleteOwner={this.deleteOwner} />
                 }} />
             </React.Fragment>
         )

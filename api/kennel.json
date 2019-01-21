@@ -42,5 +42,19 @@
       "name": "Nashville South",
       "address": "10101 Binary Court"
     }
+  ],
+  "owners": [
+    {
+      "id": 2,
+      "name": "Jamie Spears"
+    },
+    {
+      "id": 3,
+      "name": "Judd Apatow"
+    },
+    {
+      "id": 4,
+      "name": "Robin Williams"
+    }
   ]
 }
