@@ -19,10 +19,6 @@
   ],
   "animals": [
     {
-      "id": 2,
-      "name": "Jack"
-    },
-    {
       "id": 3,
       "name": "Angus"
     },
@@ -39,16 +35,16 @@
       "name": "Checkers"
     }
   ],
-  "locations":  [
+  "locations": [
     {
-    "id": 1,
-    "name": "Nashville North",
-    "address": "500 Circle Way"
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
     },
     {
-    "id": 2,
-    "name": "Nashville South",
-    "address": "10101 Binary Court"
-     }
-]
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ]
 }
