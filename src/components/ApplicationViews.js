@@ -25,6 +25,18 @@ export default class ApplicationViews extends Component {
       )
     }
 
+    deleteEmployee = (location, id) => {
+        return fetch(`http://localhost:5002/${location}/${id}`, {
+            method: "DELETE"
+        })
+        .then(e => e.json())
+        .then(() => fetch ('http://localhost:5002/employees'))
+        .then(e => e.json())
+        .then(employees => this.setState({
+            employees: employees
+        }))
+    }
+
     componentDidMount() {
         const newState = {}
 
@@ -52,7 +64,8 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList employees={this.state.employees}
+                    deleteEmployee={this.deleteEmployee} />
                 }} />
             </React.Fragment>
         )
