@@ -6,5 +6,29 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/animals`).then(e => e.json())
+  },
+  removeAndList(id) {
+      return fetch(`${remoteURL}/animals/${id}`, {
+          method: "DELETE"
+      })
+      .then(e => e.json()).then(()=> this.getAll())
   }
+
+
+
+
+
+
+     // deleteAnimal = (location,id) => {
+    //     return fetch(`http://localhost:5002/${location}/${id}`, {
+    //         method: "DELETE"
+    //     })
+    //     .then(e => e.json())
+    //     .then(() => fetch(`http://localhost:5002/animals`))
+    //     .then(e => e.json())
+    //     .then(animals => this.setState({
+    //         animals: animals
+    //     })
+    //   )
+    // }
 }
